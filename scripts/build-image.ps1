@@ -7,6 +7,7 @@ param(
     [String] [Parameter (Mandatory=$true)] $ResourceGroup,
     [String] [Parameter (Mandatory=$true)] $StorageAccount,
     [String] [Parameter (Mandatory=$true)] $SubscriptionId,
+    [String] [Parameter (Mandatory=$true)] $VmSize,
     [String] [Parameter (Mandatory=$true)] $TenantId
 )
 
@@ -45,6 +46,7 @@ packer build    -var "capture_name_prefix=$ResourcesNamePrefix" `
                 -var "storage_account=$StorageAccount" `
                 -var "subscription_id=$SubscriptionId" `
                 -var "temp_resource_group_name=$TempResourceGroupName" `
+                -var "vm_size=$VmSize" `
                 -var "tenant_id=$TenantId" `
                 -color=false `
                 $TemplatePath `
