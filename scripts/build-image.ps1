@@ -36,7 +36,7 @@ $SensitiveData = @(
 Write-Host "Show Packer Version"
 packer --version
 
-Write-Host "Build $Image VM"
+Write-Host "Build $Image VM on $VmSize"
 packer build    -var "capture_name_prefix=$ResourcesNamePrefix" `
                 -var "client_id=$ClientId" `
                 -var "client_secret=$ClientSecret" `
